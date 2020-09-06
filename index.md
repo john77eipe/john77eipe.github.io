@@ -1,10 +1,65 @@
-## Welcome to GitHub Pages
+# Welcome to Developer's Handbook
+> This is a collection of notes, findings and scribbles from my career  
 
-You can use the [editor on GitHub](https://github.com/john77eipe/john77eipe.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## Java Ecosystem
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- JDBC Basics
+- JNDI Naming Service
+- JNDI Directory Service
 
-### Markdown
+- JAX-WS
+- JAX-RS
+
+- Java Annotations
+
+- Java Enums
+
+## Linux Ecosystem
+
+- Linux File System
+- Linux Modes and Permissions
+- ArchLinux Customization
+- Linux sudo
+- Linux Packaging
+
+## Web and Java
+
+- HTTP for Java Developers
+- Ajax
+- Reverse Ajax - Old school
+- Async handling and Non-blocking IO (Servlet 3.0 & 3.1)
+- Reverse Ajax - New school
+- Server Sent Events
+- Understanding JSessionID
+- Session sharing: ID
+- Session sharing: Attributes
+
+## JavaEE and JakartaEE
+
+- JSF, a Quick Deep Dive
+
+- Authentication on JavaEE
+- Authentication & Authorization on Tomcat
+
+## World of WAS
+
+- Websphere Server, Nodes, Cell and Cluster
+- Session Replication
+- Websphere Caching
+
+## Top of Clouds
+
+- My Quick Stint with Bluemix
+- Bluemix - Getting Started
+
+## Design Patterns
+
+- Behavioural Design Patterns
+- Structural Design Patterns
+- Creational Design Patterns
+
+## Tips, Tricks and Everything Else
+
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
