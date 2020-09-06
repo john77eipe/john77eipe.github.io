@@ -3,15 +3,18 @@
 
 ## Java Ecosystem
 
+### JDBC & JNDI
+
 - JDBC Basics
 - JNDI Naming Service
 - JNDI Directory Service
 
+### Java Services
 - JAX-WS
 - JAX-RS
 
+### Core Java
 - Java Annotations
-
 - Java Enums
 
 ## Linux Ecosystem
