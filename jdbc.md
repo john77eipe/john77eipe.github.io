@@ -1,7 +1,5 @@
 # JDBC
 
-[TOC]
-
 
 
 # Introduction and History - JDBC
@@ -2475,9 +2473,9 @@ To read more on JNDI Datasources specific to tomcat: [TomcatDocs](http://tomcat.
 In admin console of websphere,
 Resources -> JDBC -> JDBC providers
 
-![19](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/19.png)
+![19](./imgs/19.png)
 
-![29](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/29.png)
+![29](./imgs/29.png)
 
 
 
@@ -2487,18 +2485,18 @@ Click finish.
 
 Check if ORACLE_JDBC_DRIVER_PATH is set correctly.
 
-![39](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/39.png)
+![39](./imgs/39.png)
 
 Create Datasource
 
 In admin console browse to,
 Resources -> JDBC -> Datasources.
 
-![49](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/49.png)
+![49](./imgs/49.png)
 
 
 
-![59](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/59.png)
+![59](./imgs/59.png)
 
 
 
@@ -2506,9 +2504,9 @@ Frame the jdbc connection url based on the type of driver you use.
 For Oracle java thin driver,
 `jdbc:oracle:thin:@[host]:[port]:[sid]`
 
-![69](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/69.png)
+![69](./imgs/69.png)
 
-![79](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/79.png)
+![79](./imgs/79.png)
 
 If you already have configured authentication details select it here. Else we will do it later.
 
@@ -2516,13 +2514,13 @@ Click finish and save.
 
 Select the Datasource -> JAAS-J2C authentication data
 
-![89](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/89.png)
+![89](./imgs/89.png)
 
 Once saved select these in data source configuration page.
 
 
 
-![99](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/99.png)
+![99](./imgs/99.png)
 
 Check the logs to verify if binding is successful.
 

@@ -10,7 +10,7 @@ A directory is a connected set of directory objects. A directory service is a se
 
 The service is accessed through the JNDI interface.
 
-<img src="/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/JNDI2.png" alt="JNDI2" style="zoom:150%;" />
+<img src="./imgs/JNDI2.png" alt="JNDI2" style="zoom:150%;" />
 
 **Directory Concepts**
 
@@ -61,7 +61,7 @@ Discussions that follow will use **LDAP** as an example.
 
 LDAP is a advanced directory service provider (protocol **NOT** a product). It's more than just a service provider as you will see later.
 
-![history](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/history.png)
+![history](./imgs/history.png)
 
 LDAP originated from DAP(Directory Access Protocol) which was initially developed to maintain a network based directory for the email server.
 
@@ -98,7 +98,7 @@ The characteristics (properties) of **objectClasses** and their **attributes** a
 
 
 
-![ldap-dit](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/ldap-dit.png)
+![ldap-dit](./imgs/ldap-dit.png)
 
 **Summary:**
 
@@ -253,7 +253,7 @@ LDAP searching can be used with any combination of attributes and can thus find 
 
 However, if the <u>entry is going to be used for user authentication, say, logon or Single Sign-On type use, the **dn**:</u> <u>value becomes extremely important and defines the logon</u> (or Bind DN in the jargon) <u>identifie</u>r. This entry name is sometimes (especially in the context of LDAP used within Microsoft's AD) referred to as a **Principal DN** though this term is not used within the LDAP standards definitions.
 
-![dit-layout-1](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/dit-layout-1.png)
+![dit-layout-1](./imgs/dit-layout-1.png)
 
 #### Navigating Entries
 
@@ -271,7 +271,7 @@ The entry **dc=example, dc=com** apparently has two RDNs (dc=example and dc=com)
 
 To navigate the DIT we can define a path (a DN) to the place where our data is (cn=Robert Smith, ou=people,dc=example, dc=com will take us to a unique entry) or we can define a path (a DN) to where we think our data is (say, ou=people,dc=example,dc=com) then search for the attribute=value or multiple attribute=value pairs to find our target entry (or entries). 
 
-![dit-dn-rdn](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/dit-dn-rdn.png)
+![dit-dn-rdn](./imgs/dit-dn-rdn.png)
 
 
 
@@ -366,7 +366,7 @@ I would like to follow the binary standalone installation.
 
    The ApacheDS default configuration contains a a data partition with the suffix "dc=example,dc=com". The image below shows the suffixes of a freshly installed ApacheDS within Apache Directory Studio.
 
-   ![defaultdit](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/defaultdit.png)
+   ![defaultdit](./imgs/defaultdit.png)
 
    The schema subsystem and ApacheDS itself store their information in special partitions, "ou=schema", "ou=config" and "ou=system" respectively.
 
@@ -378,7 +378,7 @@ I would like to follow the binary standalone installation.
 
    - Click advanced partions configuration and add.
 
-     ![partition](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/partition.png)
+     ![partition](./imgs/partition.png)
 
    - As you can see, we have modified the ID and the Suffix, all the other parameters remaining to their default values.
 
@@ -408,11 +408,11 @@ I would like to follow the binary standalone installation.
 
    
 
-   ![ds1](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/ds1.png)
+   ![ds1](./imgs/ds1.png)
 
-   ![ds3](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/ds3.png)
+   ![ds3](./imgs/ds3.png)
 
-   ![ds2](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/ds2.png)
+   ![ds2](./imgs/ds2.png)
 
     
 

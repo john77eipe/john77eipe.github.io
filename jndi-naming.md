@@ -71,7 +71,7 @@ The <u>Java Naming and Directory Interface (JNDI) is an application programming 
 
 
 
-![jndi](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/jndi.png)
+![jndi](./imgs/jndi.png)
 
 Note that when we casually say JNDI or JNDI API we mean all the 3 together: **JNDI API, Naming Manager, JNDI SPI**.
 
@@ -1171,11 +1171,11 @@ If you had given the option to use workspace metadata while adding the server to
 
 
 
-![12](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/12.png)
+![12](./imgs/12.png)
 
 If this is the case then you need to modify context.xml available under Servers Folder inside your workspace.
 
-![22](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/22.png)
+![22](./imgs/22.png)
 
 And here goes our servlet code,
 
@@ -1393,7 +1393,7 @@ source="org.eclipse.jst.jee.server:Sample"
 
 in server.xml.
 
-![01](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/01.png)
+![01](./imgs/01.png)
 
 
 By default, the context path takes the same values as the project name. So to hit the servlet we have been using the following URL
@@ -1441,7 +1441,7 @@ source="org.eclipse.jst.jee.server:Sample"
 
 Note: Changing it using the project settings of Eclipse didn't work for me. Not sure why.
 
-![02](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/02.png)
+![02](./imgs/02.png)
 
 
 
@@ -1974,7 +1974,7 @@ Same as tomcat (see above).
 
 You will be able to check the configured env-entries through admin console.
 
-![c1](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/c1.PNG)
+![c1](./imgs/c1.PNG)
 
 
 
@@ -2094,7 +2094,7 @@ Lets follow steps highlighted in the above article.
 
 **1. Create a shared library**
 
-![Capture2](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/Capture2.png)
+![Capture2](./imgs/Capture2.png)
 
 
 
@@ -2102,21 +2102,21 @@ Note that I had renamed the jar and placed it in E:\resourceFiles.
 
 **2. Create a resource environment provider**
 
-![Capture3](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/Capture3.png)
+![Capture3](./imgs/Capture3.png)
 
 **3. Create a referenceable object**
 
-![Capture4](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/Capture4.png)
+![Capture4](./imgs/Capture4.png)
 
 **4. Create resource environment entries**
 
-![Capture5](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/Capture5.png)
+![Capture5](./imgs/Capture5.png)
 
 **5. Create custom properties**
 
-![Capture6](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/Capture6.png)
+![Capture6](./imgs/Capture6.png)
 
-![Capture7](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/Capture7.png)
+![Capture7](./imgs/Capture7.png)
 
 
 
@@ -2175,13 +2175,13 @@ ResourceProce W CWNEN0046W: The com.resource.MyBean type specified on the resour
 **8. Add runtime reference to the resource jar.**
 This could be done either from the admin console while the application is being deployed or even after that.
 
-![Capture8](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/Capture8.PNG)
+![Capture8](./imgs/Capture8.PNG)
 
-![Capture9](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/Capture9.png)
+![Capture9](./imgs/Capture9.png)
 
 Since I mostly run the application directly from Eclipse/RAD. I prefer adding any dependent modules to the EAR's deployment assembly. RightClick EAR or WAR project -> Select Deployment assembly.
 
-![Capture.10](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/Capture.10.PNG)
+![Capture.10](./imgs/Capture.10.PNG)
 
 If all is well, deploy and start the application.
 
@@ -2198,9 +2198,9 @@ MyBean [foo=This is good, bar=12, qux=123]
 In admin console of websphere,
 Resources -> JDBC -> JDBC providers
 
-![19](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/19.png)
+![19](./imgs/19.png)
 
-![29](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/29.png)
+![29](./imgs/29.png)
 
 
 
@@ -2210,18 +2210,18 @@ Click finish.
 
 Check if ORACLE_JDBC_DRIVER_PATH is set correctly.
 
-![39](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/39.png)
+![39](./imgs/39.png)
 
 Create Datasource
 
 In admin console browse to,
 Resources -> JDBC -> Datasources.
 
-![49](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/49.png)
+![49](./imgs/49.png)
 
 
 
-![59](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/59.png)
+![59](./imgs/59.png)
 
 
 
@@ -2229,9 +2229,9 @@ Frame the jdbc connection url based on the type of driver you use.
 For Oracle java thin driver,
 `jdbc:oracle:thin:@[host]:[port]:[sid]`
 
-![69](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/69.png)
+![69](./imgs/69.png)
 
-![79](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/79.png)
+![79](./imgs/79.png)
 
 If you already have configured authentication details select it here. Else we will do it later.
 
@@ -2239,13 +2239,13 @@ Click finish and save.
 
 Select the Datasource -> JAAS-J2C authentication data
 
-![89](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/89.png)
+![89](./imgs/89.png)
 
 Once saved select these in data source configuration page.
 
 
 
-![99](/Users/johne/Documents/CodeRepository/GithubPages/john77eipe.github.io/imgs/99.png)
+![99](./imgs/99.png)
 
 Check the logs to verify if binding is successful.
 
