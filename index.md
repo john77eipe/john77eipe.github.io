@@ -1,17 +1,17 @@
 # Welcome to Developer's Handbook
-> This is a collection of notes, findings and scribbles from my career  
+> This is a collection of notes, findings and scribbles from my career. These notes come from blogs, books, videos and conferences.  
 
 ## Java Ecosystem
 
 ### JDBC & JNDI
 
-- JDBC Basics
-- JNDI Naming Service
-- JNDI Directory Service
+- [JDBC Basics](./jdbc.md)
+- [JNDI Naming Service](./jndi-naming.md)
+- [JNDI Directory Service](./jndi-directory.md)
 
-### Java Services
-- JAX-WS
-- JAX-RS
+### Java Services [archive]
+- [JAX-WS](https://notes-from-a-dev.blogspot.com/2014/07/jax-ws-tutorial.html)
+- [JAX-RS](https://notes-from-a-dev.blogspot.com/2014/06/jax-rs-tutorial.html)
 
 ### Core Java
 - Java Annotations
