@@ -1928,7 +1928,7 @@ Authentication successful
 
 
 
-#### **What is authentication?**
+#### What is authentication?
 
 Authentication is the process of determining whether someone (or something) in fact is what he/she/it asserts to be.
 Within ApacheDS you will likely want to authenticate clients in order to check whether they are allowed to read, add or manipulate certain data stored within the directory. The latter, i.e. whether an authenticated client is permitted to do something, is deduced during authorization.
@@ -1936,14 +1936,14 @@ Quite often, the process of authentication is delegated to a directory service b
 
 Because in doing so, authentication data (e.g. username, password) and authorization data (e.g. group relationships) are stored and managed centrally in the directory, and all connected software solutions benefit from it.
 
-#### **Authentication in LDAP**
+#### Authentication in LDAP
 
 Different versions of the LDAP support different types of authentication. The LDAP v2 defines three types of authentication: anonymous, simple (clear-text password), and Kerberos v4.
 The LDAP v3 supports anonymous, simple, and SASL authentication. SASL is the Simple Authentication and Security Layer (RFC 2222). It specifies a challenge-response protocol in which data is exchanged between the client and the server for the purposes of authentication and establishment of a security layer on which to carry out subsequent communication. By using SASL, the LDAP can support any type of authentication agreed upon by the LDAP client and server.
 
 This lesson contains descriptions of how to authenticate by using anonymous, simple, and SASL authentication.
 
-#### **Specifying the Authentication Mechanism**
+#### Specifying the Authentication Mechanism
 
 The authentication mechanism is specified by using the Context.SECURITY_AUTHENTICATION environment property. The property may have one of the following values.
 
@@ -1951,11 +1951,11 @@ The authentication mechanism is specified by using the Context.SECURITY_AUTHENTI
 **none**      Use no authentication (anonymous)
 **simple**     Use weak authentication (clear-text password)
 
-##### **The Default Mechanism**
+##### The Default Mechanism
 
 If the client does not specify any authentication environment properties, then the default authentication mechanism is "none". The client will then be treated as an anonymous client.
 
-##### **Anonymous Authentication**
+##### Anonymous Authentication
 
 As just stated, the default authentication mechanism is "none" if no authentication environment properties have been set.
 To explicitly set it
@@ -1965,9 +1965,8 @@ To explicitly set it
 env.put(Context.SECURITY_AUTHENTICATION, "none");
 ```
 
-**Simple Authentication**
 
-##### 
+##### Simple Authentication
 
 Authentication via simple bind is widely used. The method is supported by ApacheDS 2.0 for all person entries stored within any partition, if they contain a password attribute.
 
@@ -2008,7 +2007,7 @@ Note that not supplying the password or both will still authenticate you but pro
 
 
 
-##### **Using Different Authentication Information for a Context**
+##### Using Different Authentication Information for a Context
 
 If you want to use different authentication information for an existing context, then you can use Context.addToEnvironment() and Context.removeFromEnvironment() to update the environment properties that contain the authentication information. Subsequent invocations of methods on the context will use the new authentication information to communicate with the server.
 The following example shows how the authentication information of a context is changed to "none" after the context has been created.
@@ -2031,13 +2030,13 @@ ctx.addToEnvironment(Context.SECURITY_AUTHENTICATION, "none");
 
 
 
-#### **What is authorization?**
+#### What is authorization?
 
 After authentication of a user or an application (or more generally an LDAP client) against the directory server (or attaining anonymous access respectively), certain LDAP operations will be granted or rejected, according to configuration and certain rules. This process of granting access is called authorization.
 
 Authorization for directory operations is not strictly standardized in the LDAP world, RFC 2829 - Authentication Methods for LDAPdescribes various scenarios and concepts, but does not enforce a concrete implementation. Thus each product comes with its own authorization feature. So does ApacheDS. A powerful authorization subsystem is provided since version 0.9.3, but disabled as a default.
 
-##### **Group membership**
+##### Group membership
 
 In order to accomplish their authorization functionality, software components often take advantage of LDAP groups stored within the directory. groupOfNames and groupOfUniqueNames are common object classes for groups entries; they contain the DNs of their members (users, other groups) as attribute values.
 
@@ -2059,7 +2058,7 @@ More about ACI for ApacheDS [here](http://directory.apache.org/apacheds/basic-ug
 
 
 
-##### **SASL Authentication**
+##### SASL Authentication
 
 SASL means Simple Authentication and Security Layer. It extends the Simple authentication, by allowing the LDAP server to authenticate the user by various mechanisms.
 
@@ -2113,7 +2112,7 @@ Output:
 
 
 
-##### **Specifying the Authentication Mechanism**
+##### Specifying the Authentication Mechanism
 
 To use a particular SASL mechanism, you specify its Internet Assigned Numbers Authority (IANA)-registered mechanism name in the Context.SECURITY_AUTHENTICATION environment property. You can also specify a list of mechanisms for the LDAP provider to try. This is done by specifying an ordered list of space-separated mechanism names. The LDAP provider will use the first mechanism for which it finds an implementation.
 
@@ -2129,7 +2128,7 @@ The LDAP service provider that comes with JDK 1.7 has built-in support for the P
 
 
 
-##### **Using Policies to Filter the Selection of Authentication Mechanisms**
+##### Using Policies to Filter the Selection of Authentication Mechanisms
 
 The previous example that showed how to select an authentication mechanism can be refined by specifying policies that restrict the selection of authentication mechanisms. This can be used by an application or system to specify general characteristics of the acceptable authentication mechanisms without explicitly naming them, and allows the list of explicit mechanism names to be supplied orthogonally.
 
