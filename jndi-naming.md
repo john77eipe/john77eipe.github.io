@@ -1,7 +1,7 @@
 # JNDI - Naming & Directory Service
 
-[TOC]
-
+* TOC
+{:toc}
 
 
 ## Introduction to JNDI

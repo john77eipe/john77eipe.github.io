@@ -1,7 +1,7 @@
 # Directory service basics
 
-[TOC]
-
+* TOC
+{:toc}
 
 
 ### **Directory service**
