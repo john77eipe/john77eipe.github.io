@@ -277,7 +277,9 @@ There are 2 ways a request(from browser) notifies a container/server to start a 
 
    The container creates certain implicit objects for a JSP and one among those is the HTTPSession object. HTTPSession object holds the sessionId which is written to the response header. You can alter the default behaviour by adding this directive
 
+   ```
    <%@ page session="false"%>
+   ```
 
 2. Requesting a servlet that has code to initiate the creation by calling,
    request.getSession() - returns a HTTPSession object if it already exists else creates a new one
@@ -374,7 +376,7 @@ index.jsp in AppOne
 
 
 
-```html
+```jsp
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
  pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.Map"%>
@@ -414,7 +416,7 @@ one.jsp in AppOne
 
 
 
-```html
+```jsp
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.Map" %>
@@ -440,7 +442,7 @@ two.jsp in AppTwo
 
 
 
-```html
+```jsp
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.Map" %>
@@ -465,60 +467,60 @@ Cookie from request: <%= cookieFromRequestHeader %>
 One both the applications are deployed on the server, hit http://localhost:8080/AppOne/index.jsp
 
 System.out logs,
-
+```
 incoming cookie: null
 null
 outgoing cookie: JSESSIONID=B2AA271E701283A482F588F7EC8E1A34; Path=/AppOne/; HttpOnly
-
+```
 
 If you check the browser debugger console, you will notice the jsessionID set in the response headers from server
-
+```
 Set-Cookie: JSESSIONID=B2AA271E701283A482F588F7EC8E1A34; Path=/AppOne/; HttpOnly
-
+```
 
 Hitting the same url again,
-
+```
 incoming cookie: JSESSIONID=B2AA271E701283A482F588F7EC8E1A34
 hello
 outgoing cookie: null
-
+```
 
 Note that the server doesn't send the jsessionID every time to the client as that's unnecessary. The server maintains the sessionId within it's internal map and check if the incoming request has a session Id from that Map, Else it creates a new one and sends it.
 
 If you check the browser debugger console, you will notice the jsessionID set in the request headers from browser
-
+```
 Cookie: JSESSIONID=B2AA271E701283A482F588F7EC8E1A34
 Referer: http://localhost:8080/AppOne/index.jsp
 Origin: http://localhost:8080
-
+```
 
 
 
 http://localhost:8080/AppOne/one.jsp
 
 
-
+```
 Session Id: B2AA271E701283A482F588F7EC8E1A34
 Session attr 'a' : hello
 Cookie from request: JSESSIONID=B2AA271E701283A482F588F7EC8E1A34
-
+```
 
 http://localhost:8080/AppTwo/two.jsp
 
 
-
+```
 Session Id: 244C198FC0BAF8981C0634A6BB56704E
 Session attr 'a' : null
 Cookie from request: null
-
+```
 
 As seen, the JSESSIONID are different for pages originating from different contexts, /AppOne and /AppTwo in our case.
 
-![_1](./imgs/_1.png)
+![_1](./imgs/1101.png)
 
 
 
-![_2](./imgs/_2.png)
+![_2](./imgs/1102.png)
 
 Setting the sessionCookiePath
 
@@ -557,7 +559,7 @@ There are 3 ways you could do this.
 
 I tried with the first option and it worked.
 
-![_3](./imgs/_3.png)
+![_3](./imgs/1103.png)
 
 
 
@@ -573,17 +575,17 @@ Using the previous projects AppOne and AppTwo let's try to store a session level
 After storing a value for *in* request parameter on index.jsp.
 
 Clicking [One](https://notes-from-a-dev.blogspot.com/2014/04/sharing-session-attributes-across.html) to open one.jsp.
-
+```
 Session Id: DCBA9501F134F2458DC16B6A336FFE89
 Session attr 'a' : hello
 Cookie from request: JSESSIONID=DCBA9501F134F2458DC16B6A336FFE89
-
+```
 Clicking [Two](https://notes-from-a-dev.blogspot.com/2014/04/sharing-session-attributes-across.html) to open AppTwo/two.jsp.
-
+```
 Session Id: DCBA9501F134F2458DC16B6A336FFE89
 Session attr 'a' : null
 Cookie from request: JSESSIONID=DCBA9501F134F2458DC16B6A336FFE89
-
+```
 
 Note that though the sessionID is shared, the attribute information is not transfered across to a different context. This is how J2EE specification requires containers to work. ServletContext is unique to a web application and HTTPSessions belong to individual contexts.
 
@@ -636,7 +638,7 @@ No cookies founds</h2>
 Below is the output of after using this approach.
 
 one.jsp
-
+```
 Session Id: 53D3074F15F9DADE49174A1648E332D6
 Session attr 'a' : hello
 Cookie from request: JSESSIONID=53D3074F15F9DADE49174A1648E332D6; a=hello
@@ -644,10 +646,10 @@ Found Cookies Name and Value
 
 Name : JSESSIONID, Value: 53D3074F15F9DADE49174A1648E332D6
 Name : a, Value: hello
-
+```
 
 two.jsp
-
+```
 Session Id: 53D3074F15F9DADE49174A1648E332D6
 Session attr 'a' : null
 Cookie from request: JSESSIONID=53D3074F15F9DADE49174A1648E332D6; a=hello
@@ -655,7 +657,7 @@ Found Cookies Name and Value
 
 Name : JSESSIONID, Value: 53D3074F15F9DADE49174A1648E332D6
 Name : a, Value: hello
-
+```
 
 
 #### Approach 2 - Using shared application context
@@ -671,7 +673,7 @@ If you try to access another context without enabling crossContext, you will be 
 
 index.jsp
 
-```html
+```jsp
 <form method="post" action="index.jsp">
 <input type="text" name="in" /> <input type="submit" value="submit" />
 </form>
@@ -735,19 +737,19 @@ Cookie from request: <%= cookieFromRequestHeader %>
 Below is the output of after using this approach.
 
 one.jsp
-
+```
 Session Id: C24ADD6E0DAD48B7D8AEF1133BD82AFD
 Session attr 'a' : hello
 Cookie from request: JSESSIONID=C24ADD6E0DAD48B7D8AEF1133BD82AFD
-
+```
 
 two.jsp
-
+```
 Session Id: C24ADD6E0DAD48B7D8AEF1133BD82AFD
 Session attr 'a' : hello
 Cookie from request: JSESSIONID=C24ADD6E0DAD48B7D8AEF1133BD82AFD
 {C24ADD6E0DAD48B7D8AEF1133BD82AFD={a=hello}}
-
+```
 
 
 #### Approach 3 - Using Single SignOn
@@ -817,11 +819,11 @@ Any problems with this approach?
 
 Yes.
 
-1. Let's say it takes 2 mins for the complete execution but your server's HTTP timeout setting might be less than this.
+1. Let's say it takes 2 mins for the complete execution but your server's HTTP  timeout setting might be less than this.
    Changing the global setting just for one of scenarios isn't justifiable.
 2. Very poor end-user friendliness. The user might just staring at the page without any clue on whats happening.
 
-Solution
+Solution?
 
 You need 2 things - the connection shouldn't timeout and the user should see some incremental response/output.
 
@@ -959,7 +961,7 @@ public final class PollingServlet extends HttpServlet {
 
 
 Server logs:
-
+```
 [Event generator]Listening thread started
 [http-nio-8080-exec-2]Removing 0 msgs from queue
 [http-nio-8080-exec-3]Removing 0 msgs from queue
@@ -983,7 +985,7 @@ Server logs:
 [http-nio-8080-exec-4]Removing 0 msgs from queue
 [Event generator]Inserting 1 msg into queue
 [Event generator]Inserting 1 msg into queue
-
+```
 
 
 [client] checking for events...
@@ -1128,7 +1130,7 @@ public final class PiggybackServlet extends HttpServlet {
 
 
 Server logs:
-
+```
 [Event generator]Listening thread started
 FORM POSTED !
 [Event generator]Inserting 1 msg into queue
@@ -1136,7 +1138,7 @@ FORM POSTED !
 [Event generator]Inserting 1 msg into queue
 [Event generator]Inserting 1 msg into queue
 FORM POSTED !
-
+```
 
 
 
@@ -2621,7 +2623,7 @@ The EventSource interface abstracts all the low-level connection establishment a
 
 
 
-```
+```javascript
 var source = new EventSource("/path/to/stream-url");
 source.addEventListener("foo", function (event) { 
 processFoo(event.data);
