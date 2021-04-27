@@ -13,7 +13,7 @@ To fill this function, the early developers of the Web created a new TCP/IP appl
 
 
 
-##### HTTP/0.9
+#### HTTP/0.9
 
 The original version of HTTP was intended only for the transfer of hypertext documents and was designed to be very simple to make implementation of the fledgling Web easier.
 In order to perform an HTTP 0.9 request, you had to open a new TCP connection, which was closed by the server after the response had been transmitted. To establish a new connection, TCP uses a three-way handshake, which requires an extra network roundtrip before data can be exchanged.
@@ -37,7 +37,7 @@ Connection closed by foreign host.
 
 
 
-##### HTTP/1.0
+#### HTTP/1.0
 
 HTTP/1.0 transformed HTTP from a trivial request/response application to a true messaging protocol.
 The HEAD and POST methods were added and the concept of header fields was introduced.
@@ -72,7 +72,7 @@ n requests = n connection = 1 thread (from a pool of m threads)
 
 
 
-##### HTTP/1.1
+#### HTTP/1.1
 
 HTTP/1.1 introduces several significant improvements over version 1.0 of the protocol. The most significat one is the persistence support.
 
@@ -87,7 +87,7 @@ Persistent connections offer another important performance-enhancing option to H
 Suppose the client needs to send a request for files A, B and C to a server.
 Since the requests for all of these files will be sent in the same TCP session, there is no need for the client to wait for a response to its request for A before sending the request for B. The client can send requests “rapid-fire”, one after the other.
 
-##### How connection establishment happens in HTTP
+#### How connection establishment happens in HTTP
 
 1. Like most TCP/IP client/server protocols, the server in HTTP plays the passive role by listening for requests on a particular port number.
 
@@ -112,7 +112,7 @@ Persistent connections brought in a new problem.
 
 
 
-##### HTTP/1.1 and Java NIO
+#### HTTP/1.1 and Java NIO
 
 Each thread that is handling a connection stays alive until the connection is closed. That means each thread on server will reserve memory for itself even when it is sitting idle between client requests.
 
@@ -365,8 +365,8 @@ There are a number of ways you could do this - letting both applications share b
 
 I present 2 approaches on tomcat container.
 
-\- Programmatically managed
-\- Container managed
+- Programmatically managed
+- Container managed
 
 Before we start, create 2 web applications - AppOne and AppTwo.
 
@@ -588,9 +588,9 @@ Cookie from request: JSESSIONID=DCBA9501F134F2458DC16B6A336FFE89
 Note that though the sessionID is shared, the attribute information is not transfered across to a different context. This is how J2EE specification requires containers to work. ServletContext is unique to a web application and HTTPSessions belong to individual contexts.
 
 Here are 3 approaches I used to share session attributes.
-\- Using cookies
-\- Using shared application context
-\- Using single-signon
+- Using cookies
+- Using shared application context
+- Using single-signon
 
 #### Approach 1 - Using cookies
 
@@ -1005,8 +1005,8 @@ Server logs:
 [event] At Wed Aug 26 08:51:50 IST 2015
 
 There are many things to note here.
-\- Since tomcat 8 uses NIO connector by default it uses threads from a pool and that's evident when you notice the thread names for different requests
-\- Note that in the example above client keeps polling infinitely and the server keeps queuing infinitely. Both shouldn't happen and should be handled in real
+- Since tomcat 8 uses NIO connector by default it uses threads from a pool and that's evident when you notice the thread names for different requests
+- Note that in the example above client keeps polling infinitely and the server keeps queuing infinitely. Both shouldn't happen and should be handled in real
 scenarios.
 
 #### Piggyback
@@ -1210,18 +1210,18 @@ If the code doesn't call complete/dispatch within a configurable timeout, the co
 ensuring that the client gets some kind of response.
 
 AsyncListener class could be used to listen on the 4 possible events:
-\- start,
-\- complete,
-\- timeout,
-\- error
+- start,
+- complete,
+- timeout,
+- error
 
 
 The following examples are modifications of tomcat examples.
 
 **Example: Async0.java**
 
-\- servlet does startAsync()
-\- background thread calls ctx.dispatch()
+- servlet does startAsync()
+- background thread calls ctx.dispatch()
 
 
 
@@ -1553,9 +1553,9 @@ Let's consider another example
 
 **Example: Async1.java**
 
-\- servlet does startAsync()
-\- background thread calls dispatch(/path/to/jsp)
-\- this is similar to request dispatcher
+- servlet does startAsync()
+- background thread calls dispatch(/path/to/jsp)
+- this is similar to request dispatcher
 
 
 
@@ -1697,9 +1697,9 @@ Completed async request at
 
 **Example: Async2.java**
 
-\- servlet does startAsync()
-\- background thread calls writes and calls complete()
-\- this is similar to the normal flow of a servlet but in normal servlets the method just returns and that means everything that needed to be written into the stream has been written but now as it happens asynchronously the container needs to be notified that the request-response cycle has ended. And for this we explicitly calls a method called complete()
+- servlet does startAsync()
+- background thread calls writes and calls complete()
+- this is similar to the normal flow of a servlet but in normal servlets the method just returns and that means everything that needed to be written into the stream has been written but now as it happens asynchronously the container needs to be notified that the request-response cycle has ended. And for this we explicitly calls a method called complete()
 
 
 
@@ -2111,14 +2111,14 @@ The basic life cycle of an application using "long polling" is as follows:
 
 There are 2 ways to implement long polling:
 
-##### 1. Script tags
+#### 1. Script tags
 
 The goal is to append a script tag in your page to get the script executed.
 The server will: suspend the connection until an event occurs, send the script content back to the browser, and then reopen another script tag to get the next events.
 Advantages: Because it's based on HTML tags, this technique is very easy to implement and works across domains (by default, XMLHttpRequest does not allow requests on other domains or sub-domains).
 Disadvantages: Similar to the iframe technique, error handling is missing, and you can't have a state or the ability to interrupt a connection.
 
-##### 2. XMLHttpRequest long polling
+#### 2. XMLHttpRequest long polling
 
 The second, and recommended, the method to implement Comet is to open an Ajax request to the server and wait for the response.
 The server requires specific features on the server side to allow the request to be suspended.
@@ -2270,7 +2270,7 @@ The basic life cycle of an application using "HTTP streaming" is as follows:
 
 There are 2 ways to implement streaming:
 
-##### 1. Forever Iframes
+#### 1. Forever Iframes
 
 The Forever Iframes technique involves a hidden Iframe tag put in the page with its src attribute pointing to the servlet path returning server events.
 Each time an event is received, the servlet writes and flushes a new script tag with the JavaScript code inside.
@@ -2281,7 +2281,7 @@ Disadvantages: There is no way to implement reliable error handling or to track 
 
 
 
-##### 2.Multi-part XMLHttpRequest
+#### 2.Multi-part XMLHttpRequest
 
 The second technique, which is more reliable, is to use the multi-part flag supported by some browsers (such as Firefox) on the XMLHttpRequest object.
 An Ajax request is sent and kept open on the server side. Each time an event comes, a multi-part response is written through the same connection.
@@ -2294,8 +2294,6 @@ Disadvantage: The multi-part flag is not supported by all browsers. Some widely 
 For example, chunks of data (multi-parts) may be buffered and sent only when the connection is completed or the buffer is full, which can create higher latency than expected.
 
 Below code utilizes Asynchronous servlets. I'm running on Tomcat 8 which supports Servlets 3.1 spec, in other words it supports Asynchronous processing.
-
-Read about Async Servlets [here](https://notes-from-a-dev.blogspot.com/2015/08/async-handling-servlet-30.html)
 
 
 
@@ -3222,8 +3220,8 @@ private boolean sendMessage(PrintWriter writer, WeatherToken token) {
 **Version 4 - Using event ids to keep track of last 5 events alone**
 
 You need a manual tracking of messages/events if you need to do any of this
-\- send last 5 messages to a newly connected client
-\- send a max of last 5 messages missed in case of reconnection. (Note that the default feature sends the missed out events but this is a case when we are in need to modify the default setting - I haven't tried this)
+- send last 5 messages to a newly connected client
+- send a max of last 5 messages missed in case of reconnection. (Note that the default feature sends the missed out events but this is a case when we are in need to modify the default setting - I haven't tried this)
 
 
 
