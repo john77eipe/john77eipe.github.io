@@ -27,15 +27,7 @@
 
 ## Web and Java
 
-- HTTP for Java Developers
-- Ajax
-- Reverse Ajax - Old school
-- Async handling and Non-blocking IO (Servlet 3.0 & 3.1)
-- Reverse Ajax - New school
-- Server Sent Events
-- Understanding JSessionID
-- Session sharing: ID
-- Session sharing: Attributes
+- [Servlets, Ajax, Reverse Ajax, Sessions and HTTP](./http-sessions-servlets-for-java-devs.md)
 
 ## JavaEE and JakartaEE
 
