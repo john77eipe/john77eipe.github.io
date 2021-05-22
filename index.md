@@ -2,7 +2,7 @@
 > This is a collection of notes, findings and scribbles from my career. These notes come from blogs, books, videos and conferences.  
 
 ## Tips and Tricks
-- [Find available ports in Windows](./find_available-ports.md)
+- [Find available ports in Windows](./find-available-ports.md)
 - [List installed programs in Windows](./find-installed-programs-cmd.md)
 - [Root missing in Ubuntu?](./root-missing-ubuntu.md)
 - [Change system name in Ubuntu](./change-system-name.md)
@@ -95,5 +95,6 @@ The below are blogs and notes taken during 2017 when Bluemix was announced by IB
 - Structural Design Patterns
 - Creational Design Patterns
 
-## Misc Topics [archive]
+## Misc Topics
+### Browsers [archive]
 - [Chrome vs Chromium](https://notes-from-a-dev.blogspot.com/2011/03/chrome-and-chromium.html)
