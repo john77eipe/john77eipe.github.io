@@ -9,9 +9,11 @@
 
 ## Java Ecosystem
 
-### Web and Java
+### Web, Wire and Java
 
 - [Servlets, Ajax, Reverse Ajax, Sessions and HTTP](./http-sessions-servlets-for-java-devs.md)
+- [JSON Serialization and Deserialization using Jackson](./java-json-serde.md)
+- [Dynamic selection of implementations](./java-impl-selection.md)
 ### JDBC & JNDI
 
 - [JDBC Basics](./jdbc.md)
